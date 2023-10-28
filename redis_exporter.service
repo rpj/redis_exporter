@@ -1,0 +1,13 @@
+[Unit]
+Description=Redis Prometheus metrics exporter
+After=network.target
+
+[Service]
+ExecStart=/home/ubuntu/redis_exporter/redis_exporter
+Restart=always
+User=ubuntu
+Group=ubuntu
+
+[Install]
+WantedBy=multi-user.target
+Alias=redis_exporter.service
